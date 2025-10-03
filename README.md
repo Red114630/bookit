@@ -54,6 +54,7 @@ Bookit 是一個簡單預約網頁，目標是讓使用者能夠管理與預約�
 
 
 以下是本專案的主要資料夾結構範例，供你快速瀏覽整體架構：
+
 bookit/
 ├── app/
 ├── bootstrap/
@@ -68,6 +69,8 @@ bookit/
 ├── composer.json
 ├── package.json
 └── README.md
+
+
 你可以在這些資料夾中，找到對應的控制器 (Controllers)、模型 (Models)、視圖 (Views)、前端資源 (JS / CSS)、路由設定等。
 
 
