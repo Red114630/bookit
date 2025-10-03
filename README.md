@@ -1,61 +1,82 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# BookIt
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> 職訓局全端班 實習作品 —— Bookit 球館通 專案
 
-## About Laravel
+## 專案簡介
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Bookit 是一個簡單預約網頁，目標是讓使用者能夠管理與預約運動場地。  
+本專案為職訓局全端班的實習作品，以小型開發模式，練習從零到有的開發流程。
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 功能特色
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- 使用者註冊 / 登入
+- 場地列表 / 瀏覽  
+- 場地預約 / 取消 / 查詢  
+- 場地管理者後台介面：管理預約 / 場地  
+- 平台管理者後台介面：管理預約 / 場地 / 場館 / 使用者 
 
-## Learning Laravel
+## 技術棧 / 工具
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+以下是本專案所用的主要技術與工具：
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+| 類別 | 工具 / 框架 |
+|---|---|
+| 後端 | Laravel (PHP) |
+| 前端 | Blade |
+| 資料庫 | MySQL |
+| API / 路由 | Laravel routing |
+| 打包 / 工具 | NPM / Composer |
+| 部署 / 環境 | Docker / .env 環境設定 / 伺服器配置 |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 安裝與執行（本地開發）
 
-## Laravel Sponsors
+以下是一個簡單的安裝與開發流程，假設你在本機開發：
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. Clone 此專案  
+   git clone https://github.com/red114630/bookit.git
+   cd bookit
+2. 安裝後端套件
+   composer install
+3. 安裝前端套件
+   npm install
+4. 複製 .env.example 並修改環境設定
+   cp .env.example .env
+   # 編輯 .env，填入資料庫、信件、API 鍵等資訊
+5. 產生應用程式金鑰（Laravel）
+   php artisan key:generate
+6. 資料庫遷移與填入初始資料
+   php artisan migrate
+   php artisan db:seed
+7. 啟動開發伺服器 / 前端開發模式
+   php artisan serve
+   npm run dev
+8. 在瀏覽器中開啟：http://localhost:8000 或你所設定的網址
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+以下是本專案的主要資料夾結構範例，供你快速瀏覽整體架構：
+bookit/
+├── app/
+├── bootstrap/
+├── config/
+├── database/
+├── public/
+├── resources/
+├── routes/
+├── storage/
+├── tests/
+├── .env.example
+├── composer.json
+├── package.json
+└── README.md
+你可以在這些資料夾中，找到對應的控制器 (Controllers)、模型 (Models)、視圖 (Views)、前端資源 (JS / CSS)、路由設定等。
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+部署（上線）
+以下是簡要的部署或上線步驟，視你的環境與主機不同而異：
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. 上傳程式碼到伺服器
+2. 安裝後端 / 前端相依套件
+3. 設定 .env 為生產環境
+4. 執行資料庫遷移（php artisan migrate --force）
+5. 產生優化檔案（例如 php artisan config:cache、php artisan route:cache）
+6. 啟動 / 重啟伺服器
